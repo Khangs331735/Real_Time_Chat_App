@@ -17,7 +17,6 @@ const io = new Server(server, {
 
 });
 
-
 io.on("connection", (socket) =>{
     console.log(`User Connected: ${socket.id}`);
 
@@ -26,12 +25,18 @@ io.on("connection", (socket) =>{
         console.log(`User With ID: ${socket.id} joined room: ${data}`);
     });
 
+    socket.on("send_message", (data) =>{
+        console.log(data);
+    });
+
     socket.on("disconnect", () => {
         console.log('User Disconnected', socket.id);
     });
 });
 
-
+server.listen(3001, () => {
+    console.log("Listening on Port 3001");
+});
 
 
 server.listen(3001, () => {
