@@ -53,10 +53,9 @@ function Chat({socket, username, room})  {
 
             </div>
             <div className="chat-footer">
-                <input type="text" value={currentMessage} placeholder="I am..." onChange = {(e) => {setCurrentMessage(e.target.value)}}
-                onKeyPress={(event) => {event.key === "Enter" && sendMessage();}}
+                <input type="text" value={currentMessage} class='box' placeholder="Say Something..." onChange = {(e) => {setCurrentMessage(e.target.value)}}
+                onKeyPress={(event) => {event.key === "Enter" && sendMessage();}}/>
 
-                />
                 <button onClick = {sendMessage}> &#9658; </button>
             </div>
 
