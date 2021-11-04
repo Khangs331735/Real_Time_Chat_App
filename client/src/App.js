@@ -1,4 +1,4 @@
-impimport './App.css';
+import './App.css';
 import * as io from "socket.io-client";
 import { useState } from 'react';
 import Chat from './Chat.js';
@@ -26,22 +26,22 @@ function App() {
     <div className="App">
     {!showChat ? (
       <div className="joinChatContainer">
-        <h3>Join A Chat</h3>
-        <input
+        <h1 className='signWelcome'>Welcome To Chat App</h1>
+        <input className='inPuts'
           type="text"
-          placeholder="John..."
+          placeholder="Enter User Name..."
           onChange={(event) => {
             setUsername(event.target.value);
           }}
         />
-        <input
+        <input className='inPuts'
           type="text"
           placeholder="Room ID..."
           onChange={(event) => {
             setRoom(event.target.value);
           }}
         />
-        <button onClick={joinRoom}>Join A Room</button>
+        <button onClick={joinRoom}>Join To Room</button>
       </div>
     ) : (
       <Chat socket={socket} username={username} room={room} />
