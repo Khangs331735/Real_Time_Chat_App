@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from 'react';
 
 function Chat({socket, username, room})  {
@@ -15,8 +15,14 @@ function Chat({socket, username, room})  {
             await socket.emit('send_message', messageData);
         }
     };
+
+    useEffect(() => {
+        socket.on("receive_message", (data) => {
+            console.log(data);
+        })
+    },[socket]);
     return (
-        <div>
+        <div className='chat-window'>
             <div className="chat-header">
                 <p> Live Chat</p>
             </div>
