@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+
 body {
   padding: 0;
   margin: 0;
@@ -7,45 +9,53 @@ body {
   place-items: center;
   height: 100vh;
   background-image:linear-gradient(to bottom right, #33475b, #0033CC, #FF77CC, rgb(255, 122, 89));
+  font-family: "Open Sans", sans-serif;
 }
-.logIn {
+.joinChatContainer {
   width: 600px;
   height: 350px;
-  border: 5px solid #be6817;
+  border: 8px solid #be6817;
   border-radius: 60px;
   display: grid;
   place-items: center;
 }
 
-.logIn input{
+.joinChatContainer input{
   margin: 10px;
-  width: 250px;
+  width: 350px;
   height: 40px;
-  border: 4px solid #97bb17;
+  border: 6px solid #d31856;
+  border-radius: 10px;
   background-color: transparent;
+  color: white;
+  font-size: 30px;
+}
+::placeholder{
   color: whitesmoke;
-  font-size: 25px;
 }
 
-.logIn input:focus{
+.joinChatContainer input:focus{
   outline:none;
 }
 
-.logIn button{
+.joinChatContainer button{
    width: 200px;
    height: 50px;
    border: none;
-   background-color: blueviolet;
+   background-color: rgb(1, 194, 88);
    color: white;
    font-size: 16px;
    margin-top: 1px;
 }
+.joinChatContainer button:hover {
+  background: #d31856;
+}
 
-.chatheader {
-  font-size: 35px;
+.signWelcome {
+  font-size: 55px;
   position: absolute;
-  top: 13%;
-  left: 50%;
+  top: 10%;
+  left: 52%;
   transform: translate(-50%, -50%) skew(-6deg);
   transform-origin: bottom left;
   color: transparent;
@@ -71,7 +81,7 @@ body {
   -4px -5px 1px #fff,
   -5px -5px 1px #fff;
 }
-.chatheader:before {
+.signWelcome:before {
   content: "Welcome To Chat App";
   position: absolute;
   left: 0;
@@ -86,58 +96,12 @@ body {
   15px 0px 35px rgba(0,0,0,0.15),
   15px 0px 45px rgba(0,0,0,0.2);
 }
-.App {
-  width: 100vw;
-  height: 100vh;
-  background: #fff;
-  color: #212121;
-  font-family: "Open Sans", sans-serif;
-  display: grid;
-  place-items: center;
-}
-body {
-  margin: 0%;
-  padding: 0%;
-}
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 
-.joinChatContainer {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
+.chat-footer input::-webkit-input-placeholder{
+  color: black;
+  font-size: 19px;
 
-.joinChatContainer h3 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
 }
-.joinChatContainer input {
-  width: 210px;
-  height: 40px;
-  margin: 7px;
-  border: 2px solid #43a047;
-  border-radius: 5px;
-  padding: 5px;
-  font-size: 16px;
-}
-
-.joinChatContainer button {
-  width: 225px;
-  height: 50px;
-  margin: 7px;
-  border: none;
-  border-radius: 5px;
-  padding: 5px;
-  font-size: 16px;
-  background: #43a047;
-  color: #fff;
-  cursor: pointer;
-}
-
-.joinChatContainer button:hover {
-  background: #2e7d32;
-}
-
 .chat-window {
   width: 300px;
   height: 420px;
